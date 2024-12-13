@@ -20,7 +20,7 @@ jobs:
     - name: Make init
       run: make init
 
-    - name: Make build
+    - name: Make docker-build
       env:
         IMAGE_NAME: devopsclass-app
       run: make build
