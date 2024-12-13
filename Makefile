@@ -12,5 +12,6 @@ run:;
 	python app.py
 
 init:
-	python3 -m venv .venv
-	source .venv/bin/activate && pip install --upgrade pip && pip install -r requirements.txt
+	@which python3 || echo "Python3 is not installed"
+	python3 -m venv .venv || echo "Failed to create virtual environment"
+	. .venv/bin/activate && pip install --upgrade pip && pip install -r requirements.txt || echo "Failed to install dependencies"
