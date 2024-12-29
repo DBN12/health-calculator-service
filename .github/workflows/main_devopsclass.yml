@@ -17,19 +17,13 @@ jobs:
       with:
         python-version: '3.12'
 
-    - name: Make init
+    - name: Install dependencies
       run: make init
 
-    - name: Make docker-build
-      env:
-        IMAGE_NAME: devopsclass-app
+    - name: Build Docker image
       run: make docker-build
-
-    - name: Make run
       env:
         IMAGE_NAME: devopsclass-app
-        PORT: 5000
-      run: make run
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2

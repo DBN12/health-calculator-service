@@ -9,7 +9,7 @@ docker-build:
 	docker build  -t DNB12/health-calculator-service:latest .
 
 run:;
-	python app.py
+	. .venv/bin/activate && python app.py
 
 init:
 	@which python3 || echo "Python3 is not installed"
